@@ -10,6 +10,11 @@ import Config
 config :rockelivery,
   ecto_repos: [Rockelivery.Repo]
 
+# Ecto configurado para usar UUID na primary_key e na foreign_key
+config :rockelivery, Rockelivery.Repo,
+  migration_primary_key: [type: :binary_id],
+  migration_foreign_key: [type: :binary_id]
+
 # Configures the endpoint
 config :rockelivery, RockeliveryWeb.Endpoint,
   url: [host: "localhost"],
