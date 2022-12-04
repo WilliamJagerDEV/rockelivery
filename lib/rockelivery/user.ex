@@ -35,24 +35,8 @@ defmodule Rockelivery.User do
   end
 
   defp put_password_hash(%Changeset{valid?: true, changes: %{password: password}} = changeset) do
-    change(changeset, %{password_hash: Pbkdf2.add_hash(password)})
+    change(changeset, Pbkdf2.add_hash(password))
   end
 
   defp put_password_hash(changeset), do: changeset
-
-
-
-  # Rockelivery.User.test_changeset
-  def test_changeset do
-    %{
-      age: 27,
-      address: "Rua Guanabara 56",
-      cep: "29164815",
-      cpf: "11839027789",
-      email: "william@gmail.com",
-      password: "26maio09",
-      name: "William"
-    }
-    |> changeset()
-  end
 end
