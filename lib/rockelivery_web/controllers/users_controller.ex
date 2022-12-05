@@ -14,7 +14,6 @@ defmodule RockeliveryWeb.UsersController do
     end
   end
 
-
   def delete(conn, %{"id" => id}) do
     with {:ok, %User{}} <- Rockelivery.delete_user(id) do
       conn
@@ -22,8 +21,6 @@ defmodule RockeliveryWeb.UsersController do
       |> text("")
     end
   end
-
-
 
   def show(conn, %{"id" => id}) do
     with {:ok, %User{} = user} <- Rockelivery.get_user_by_id(id) do

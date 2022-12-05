@@ -3,7 +3,6 @@ defmodule Rockelivery.MyTests do
 
   alias Rockelivery.Users.Create
 
-
   # Rockelivery.MyTests.test_changeset
   def test_changeset do
     %{
@@ -14,7 +13,9 @@ defmodule Rockelivery.MyTests do
       email: "tamires@gmail.com",
       password: "26maio09",
       name: "William"
-    } |> Create.call()
+    }
+    |> Create.call()
+
     # |> User.changeset()
     # |> Repo.insert()
 
