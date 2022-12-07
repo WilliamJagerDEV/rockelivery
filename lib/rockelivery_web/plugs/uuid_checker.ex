@@ -16,8 +16,8 @@ defmodule RockeliveryWeb.Plugs.UUIDChecker do
   def call(conn, _opts), do: conn
 
   defp render_error(conn) do
-
     body = Jason.encode!(%{message: "Invalid UUID"})
+
     conn
     |> put_resp_content_type("application/json")
     |> send_resp(:bad_request, body)
