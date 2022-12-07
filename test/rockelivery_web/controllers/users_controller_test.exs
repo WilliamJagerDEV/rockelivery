@@ -1,7 +1,6 @@
 defmodule RockeliveryWeb.UsersControllerTest do
   use RockeliveryWeb.ConnCase, async: true
   import Rockelivery.Factory
-  alias RockeliveryWeb.UsersController
 
   describe "create/2" do
     test "when all aprams are valid, creates the user", %{conn: conn} do
